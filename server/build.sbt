@@ -10,8 +10,8 @@ resolvers ++= Seq(
   Resolver.bintrayRepo("sbt-assembly", "maven")
 )
 
-assemblyJarName in assembly := s"food-stats-${version}.jar"
-test in assembly := {}
+assemblyJarName in assembly := s"food-stats.jar"
+mainClass in assembly := Some("com.romanidze.foodstats.application.Main")
 
 assemblyMergeStrategy in assembly := {
   case x if x.contains("io.netty.versions.properties") => MergeStrategy.discard
