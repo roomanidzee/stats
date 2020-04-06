@@ -10,7 +10,7 @@ class HelloRoutes[F[_]: Sync]() extends Http4sDsl[F] {
 
   val routes: HttpRoutes[F] = HttpRoutes.of[F] {
 
-    case GET -> Root / "users" => Ok("Hello, user!")
+    case GET -> Root / "hello" => Ok("Hello, food statistics user!")
 
   }
 
