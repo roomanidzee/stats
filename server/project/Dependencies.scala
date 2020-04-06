@@ -21,7 +21,9 @@ object Dependencies {
     "liquibase" -> "3.8.8",
 
     "scala-logging" -> "3.9.2",
-    "logback" -> "1.2.3"
+    "logback" -> "1.2.3",
+
+    "flexmark" -> "0.35.10"
 
   )
 
@@ -90,6 +92,10 @@ object Dependencies {
     "org.tpolecat" %% "doobie-scalatest" % versions("doobie")
   ).map(_ % Test)
 
+  private val flexmark: Seq[ModuleID] = Seq(
+    "com.vladsch.flexmark" % "flexmark-all" % versions("flexmark")
+  ).map(_ % Test)
+
   val mainDeps: Seq[ModuleID] =
     web.union(pureConfig)
       .union(logging)
@@ -99,5 +105,6 @@ object Dependencies {
 
   val testDeps: Seq[ModuleID] =
     scalaTest.union(doobieTest)
+             .union(flexmark) 
 
 }

@@ -20,6 +20,11 @@ assemblyMergeStrategy in assembly := {
     oldStrategy(x)
 }
 
+testOptions in Test ++= Seq(
+  Tests.Argument(TestFrameworks.ScalaTest, "-o"),
+  Tests.Argument(TestFrameworks.ScalaTest, "-h", "target/test-reports")
+)
+
 scalacOptions ++= Seq(
   "-deprecation",
   "-encoding",

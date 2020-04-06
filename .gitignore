@@ -53,6 +53,9 @@ out/
 .idea
 target
 build
+.metals
+**/metals.sbt
+.bloop
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
