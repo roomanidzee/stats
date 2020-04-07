@@ -10,7 +10,8 @@ resolvers ++= Seq(
   Resolver.bintrayRepo("sbt-assembly", "maven")
 )
 
-assemblyJarName in assembly := s"food-stats.jar"
+assemblyJarName in assembly := "food-stats.jar"
+test in assembly := {}
 mainClass in assembly := Some("com.romanidze.foodstats.application.Main")
 
 assemblyMergeStrategy in assembly := {

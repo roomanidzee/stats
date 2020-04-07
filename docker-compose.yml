@@ -1,0 +1,29 @@
+version: "2.4"
+
+services:
+
+  app:
+
+    networks:
+      - stats_net
+
+    image: 'romanidze/food_stats_app:latest'
+
+    build:
+      context: server
+      dockerfile: docker/app/Dockerfile
+      args:
+        - PROD_JVM_OPTS=-Xmx200m
+        - PORT=8000
+        - DOCKERIZE_VERSION=v0.6.1
+        - SBT_VERSION=1.3.6
+    
+    container_name: food_stats_app
+
+    command: launch-app
+
+    ports:
+      - "8000:8000"
+
+networks: 
+  stats_net:
