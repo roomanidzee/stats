@@ -34,10 +34,11 @@ scalacOptions ++= Seq(
   "-feature",
   "-Ypartial-unification"
 )
-maxErrors := 5
 
 scalafmtOnCompile := true
 
 libraryDependencies ++=
   Dependencies.mainDeps ++
     Dependencies.testDeps
+
+addCommandAlias("construct", ";jacoco;assembly")
