@@ -2,6 +2,6 @@ package com.romanidze.foodstats.config
 
 case class FoodSourceConfig(
   site: String,
-  category: String,
+  sections: List[String],
   pages: Int
 )
