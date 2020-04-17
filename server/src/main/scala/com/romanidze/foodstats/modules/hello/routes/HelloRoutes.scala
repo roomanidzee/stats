@@ -1,8 +1,6 @@
-package com.romanidze.foodstats.modules.hello
+package com.romanidze.foodstats.modules.hello.routes
 
-import cats.implicits._
 import cats.effect.Sync
-
 import org.http4s.HttpRoutes
 import org.http4s.dsl.Http4sDsl
 

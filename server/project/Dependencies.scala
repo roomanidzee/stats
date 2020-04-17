@@ -13,6 +13,7 @@ object Dependencies {
     "scala-test" -> "3.1.1",
 
     "cats" -> "2.1.1",
+    "sttp" -> "1.7.2",
 
     "jsoup" -> "1.13.1",
 
@@ -62,6 +63,11 @@ object Dependencies {
     "org.typelevel" %% "cats-core" % versions("cats")
   )
 
+  private val sttp: Seq[ModuleID] = Seq(
+    "com.softwaremill.sttp" %% "core" % versions("sttp"),
+    "com.softwaremill.sttp" %% "async-http-client-backend-cats" % versions("sttp"),
+  )
+
   //doobie
   private val doobie: Seq[ModuleID] = Seq(
     "org.tpolecat" %% "doobie-core" % versions("doobie"),
@@ -100,6 +106,7 @@ object Dependencies {
     web.union(pureConfig)
       .union(logging)
       .union(cats)
+      .union(sttp)
       .union(jdbc)
       .union(jsoup)
 

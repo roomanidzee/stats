@@ -1,9 +1,9 @@
-package com.romanidze.foodstats.modules.hello
+package com.romanidze.foodstats.modules.hello.routes
 
 import cats.effect.IO
-import org.http4s.{ EntityDecoder, Method, Request, Status, Uri }
 import org.http4s.syntax.kleisli._
-import org.scalatest.{ Matchers, WordSpec }
+import org.http4s.{Method, Request, Status, Uri}
+import org.scalatest.{Matchers, WordSpec}
 
 class HelloRoutesSpec extends WordSpec with Matchers {
 
